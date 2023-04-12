@@ -97,7 +97,6 @@ const HomePage = () => {
                 {vlan.map((vlan)=><option key={vlan}>{vlan}</option>)}
             </datalist>
             <AssignVlan vlanName={vlanName} selectedPorts={selectedPorts}/>
-            <button>Change VLAN</button>
         </div>
     <div className="portListing table">
       <table className="portListingTable">
