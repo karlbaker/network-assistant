@@ -43,6 +43,7 @@ const HomePage = () => {
       key: 1,
       type: "access",
       po: "N/A",
+      fqdn: "switch01.letsautomateit.com",
       wallPort: "A01-03",
       vlan: "CustomerA PXE (534)",
       speed: "auto",
@@ -54,6 +55,7 @@ const HomePage = () => {
       key: 2,
       type: "access",
       po: "N/A",
+      fqdn: "switch01.letsautomateit.com",
       wallPort: "A01-04",
       vlan: "Internet (222)",
       speed: "auto",
@@ -63,8 +65,9 @@ const HomePage = () => {
     },
     {
       key: 3,
-      type: "access",
-      po: "N/A",
+      type: "trunk",
+      po: "101",
+      fqdn: "switch02.letsautomateit.com",
       wallPort: "A01-05",
       vlan: "CustomerC PXE (535)",
       speed: "auto",
@@ -74,8 +77,9 @@ const HomePage = () => {
     },
     {
       key: 4,
-      type: "access",
-      po: "N/A",
+      type: "trunk",
+      po: "101",
+      fqdn: "switch02.letsautomateit.com",
       wallPort: "A01-06",
       vlan: "Internet (222)",
       speed: "auto",
@@ -102,6 +106,7 @@ const HomePage = () => {
           <th>Wall Port Name</th>
           <th>Port Type</th>
           <th>Port Channel #</th>
+          <th>Switch FQDN</th>
           <th>Assigned VLAN</th>
           <th>Port Speed</th>
           <th>Port Duplex</th>
@@ -121,9 +126,10 @@ const HomePage = () => {
                 key={row.key}
                 onClick={() => handleRowClick(index)}
                 >
-                  <td>{row.wallPort}<FcViewDetails /></td>
+                  <td>{row.wallPort}<a href={"/ports/" + row.wallPort + "/details"}><FcViewDetails /></a></td>
                   <td>{row.type}</td>
                   <td>{row.po}</td>
+                  <td>{row.fqdn}</td>
                   <td>{row.vlan}</td>
                   <td>{row.speed}</td>
                   <td>{row.duplex}</td>
