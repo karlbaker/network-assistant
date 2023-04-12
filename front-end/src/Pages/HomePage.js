@@ -81,7 +81,7 @@ const HomePage = () => {
       po: "101",
       fqdn: "switch02.letsautomateit.com",
       wallPort: "A01-06",
-      vlan: "Internet (222)",
+      vlan: "CustomerC PXE (535)",
       speed: "auto",
       duplex: "auto",
       connection: "connected",
